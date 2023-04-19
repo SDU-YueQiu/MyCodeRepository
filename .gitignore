@@ -1,0 +1,10 @@
+*.exe
+*.clang-format
+.vs
+source
+*.png
+*.jpg
+*.mp4
+.idea
+cmake-build-debug
+学校
