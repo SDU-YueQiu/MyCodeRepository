@@ -91,7 +91,7 @@ int solve()
         tans += ans[n][i];
         tans %= mod;
     }
-    return tans;
+    return (tans+ mod) % mod;
 }
 
 signed main()
