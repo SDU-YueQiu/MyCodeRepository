@@ -15,5 +15,6 @@ int main()
         sum += a[i];
     }
     cout << "平均成绩为：" << sum / n << endl;
+    
     return 0;
 }
