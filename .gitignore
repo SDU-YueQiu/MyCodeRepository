@@ -11,9 +11,8 @@ cmake-build-debug
 dzd.*
 wq.*
 homework
-./vsprograms/
-./oops/
-./mathmatica/
-./lua/
-./fuckbilibili/
-./Warcraft/
+/vsprograms/
+/oops/
+/lua/
+/fuckbilibili/
+/Warcraft/
