@@ -1,0 +1,65 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      1697,         57]
+NotebookOptionsPosition[      1241,         40]
+NotebookOutlinePosition[      1746,         59]
+CellTagsIndexPosition[      1703,         56]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{"\[Integral]", 
+  RowBox[{
+   FractionBox[
+    RowBox[{"(", 
+     RowBox[{
+      SuperscriptBox["\[ExponentialE]", 
+       RowBox[{"4", "x"}]], "+", 
+      RowBox[{"2", 
+       SuperscriptBox["\[ExponentialE]", 
+        RowBox[{"2", "x"}]]}], "-", 
+      SuperscriptBox["\[ExponentialE]", "x"]}], ")"}], 
+    RowBox[{
+     SuperscriptBox["\[ExponentialE]", 
+      RowBox[{"2", "x"}]], "+", "1"}]], 
+   RowBox[{"\[DifferentialD]", "x", " "}]}]}]], "Input",
+ CellChangeTimes->{{3.8865465468032427`*^9, 3.8865466298683653`*^9}, {
+  3.8865469403774834`*^9, 3.8865469727982883`*^9}},
+ CellLabel->"In[6]:=",ExpressionUUID->"c67693b4-3339-45ba-bfce-87564147b963"]
+},
+WindowSize->{1536., 795.5999999999999},
+WindowMargins->{{
+  Automatic, -5.399999999999864}, {-5.399999999999977, Automatic}},
+TaggingRules-><|"TryRealOnly" -> False|>,
+FrontEndVersion->"13.2 for Microsoft Windows (64-bit) (2023\:5e741\:670830\
+\:65e5)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"2e0dbdf5-c081-474d-839f-745edef74332"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 679, 18, 51, "Input",ExpressionUUID->"c67693b4-3339-45ba-bfce-87564147b963"]
+}
+]
+*)
+
