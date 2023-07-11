@@ -3,13 +3,18 @@
 
 using namespace std;
 
+class fuck
+{
+private:
+    int nmsl;
+public:
+    fuck():nmsl(0){}
+    int nm(){return nmsl;}
+};
+
 int main()
 {
-    vector<int> s;
-    for(int i=1;i<=1e10;++i)
-    {
-        s.push_back(i);
-        cout<<s.capacity()<<endl;
-    }
+    fuck *f=new fuck();
+    cout<<f->nm();
     return 0;
 }
