@@ -46,7 +46,7 @@ void erfen()
         cnt = 0;
         int l = 1, r = 1, mid;//interesting erfen
         ss = "";
-        mx[1] = 1;
+        mx[1] = 1;//天才！！
         for (; l < m; l = r)
         {
             for (r = l + 1; r < m && flag[r] == 0; ++r);

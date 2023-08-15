@@ -2,16 +2,24 @@
 #include "cmath"
 #include "map"
 #include "set"
+#include "string"
 #include "vector"
 #include <iostream>
-#include "string"
 
 using namespace std;
-#define int __int128
-const int N = 1e5 + 10;
+const int N = 1e3 + 10;
+//#define int long long
+typedef pair<int, int> pii;
+//#define endl '/n'
+
+int m, n;
+//string s;
+int mn[N], mx[N];
+bool done[N];
 
 signed main()
 {
-    string s='a';
+    for(int i=1;i<=1000;++i)
+        cout<<i<<" "<<1<<endl;
     return 0;
 }
