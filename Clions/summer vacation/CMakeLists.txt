@@ -3,4 +3,4 @@ project(summer_vacation)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(summer_vacation main.cpp)
+add_executable(summer_vacation "B3644 dfs.cpp")

@@ -1,9 +1,15 @@
 #include <iostream>
+#include <string>
 using namespace std;
 
-int main() {
-    int *a=new int[100]{1,2,3,4};
-    int *&b=a;
-    cout<<b[1];
+int main()
+{
+    char s[10];
+    s[1] = 'a';
+    s[2] = 'b';
+    s[3] = 'c';
+    s[4] = 0;
+    string ss = s+1;
+    cout << ss << endl;
     return 0;
 }
