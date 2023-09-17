@@ -4,15 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "fee5936cea120972",
+        "id": "696154303d84b955",
         "type": "tabs",
         "children": [
           {
-            "id": "fb48471ba2264ea3",
+            "id": "5729c98081898e71",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "image",
+              "state": {
+                "file": "Pasted image 20230908223842.png"
+              }
             }
           }
         ]
@@ -81,6 +83,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Pasted image 20230908223842.png",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,6 +100,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Pasted image 20230908223842.png",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -118,7 +122,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "Pasted image 20230908223842.png"
+              }
             }
           }
         ]
@@ -130,6 +136,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "markdown-importer:打开 Markdown 格式转换器": false,
       "switcher:打开快速切换": false,
       "graph:查看关系图谱": false,
       "canvas:新建白板": false,
@@ -138,6 +145,9 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "fb48471ba2264ea3",
-  "lastOpenFiles": []
+  "active": "41ede646d713f811",
+  "lastOpenFiles": [
+    "学业相关政策解读.md",
+    "Pasted image 20230908223842.png"
+  ]
 }
