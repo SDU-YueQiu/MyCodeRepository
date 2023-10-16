@@ -1,211 +1,118 @@
-#include "algorithm"
-#include "cmath"
-#include "map"
-#include "set"
-#include "stack"
-#include "vector"
-#include <iostream>
-
+#include<iostream>
+#include<string>
 using namespace std;
-// #define int long long
-typedef long long ll;
-const int N = 1e3 + 10;
-// #define endl '\n'
-typedef pair<int, int> pii;
+class person {
+public:
+    string name,phone;
+    int classroom,room;
+    void setname(string a){name=a;}
+    void setphone(string a){phone=a;}
+    void setclassroom(int a){classroom=a;}
+    void setroom(int a){room=a;}
+    string getname(){return name;}
+    string getphone(){return phone;}
+    int getclassroom(){return classroom;}
+    int getroom(){return room;}
+    person fuzhi(person a){person b;
+        string midname=a.getname();
+        string midphone=a.getphone();
+        int midclassroom=a.getclassroom();
+        int midroom=a.getroom();
+        b.setname(midname);
+        b.setphone(midphone);
+        b.setclassroom(midclassroom);
+        b.setroom(midroom);
+        return b;
+    }
+};
+class address {
+    person * element;
+    int length;
 
-int qipan[N][N];
-int n, m;
-
-void printQ(pii P1, pii P2)
-{
-	int x1 = P1.first, y1 = P1.second;
-	int x2 = P2.first, y2 = P2.second;
-	int mid = (y2 + y1 + 1) / 2;
-	for (int i = y1 + 1; i <= mid; ++i)
-		cout << "D";
-	for (int i = x1 + 1; i <= x2; ++i)
-		cout << "R";
-	for (int i = mid + 1; i <= y2; ++i)
-		cout << "D";
-}
-
-void printYZ(pii P1, pii P2)
-{
-	int x = P1.first, y = P1.second;
-	while (x != P2.first || y != P2.second)
-	{
-		if (qipan[x + 1][y])
-		{
-			cout << "R";
-			x++;
-		}
-		else if (qipan[x][y + 1])
-		{
-			cout << "D";
-			y++;
-		}
-		else
-			return;
-	}
-}
-
-void printYZmap(pii P1, pii P2, map<pii, bool> &vis)
-{
-	{
-		int x = P1.first, y = P1.second;
-		while (x != P2.first || y != P2.second)
-		{
-			if (qipan[x + 1][y])
-			{
-				x++;
-				vis[{x, y}] = 1;
-			}
-			else if (qipan[x][y + 1])
-			{
-				y++;
-				vis[{x, y}] = 1;
-			}
-		}
-	}
-}
-
-void printQmap(pii P1, pii P2, map<pii, bool> &vis)
-{
-	int x1 = P1.first, y1 = P1.second;
-	int x2 = P2.first, y2 = P2.second;
-	int mid = (y2 + y1 + 1) / 2;
-	for (int i = y1 + 1; i <= mid; ++i)
-		vis[{x1, i}] = 1;
-	for (int i = x1 + 1; i <= x2; ++i)
-		vis[{i, mid}] = 1;
-	for (int i = mid + 1; i <= y2; ++i)
-		vis[{x2, i}] = 1;
-}
-
-void qurry(pii P1, pii P2)
-{
-	map<pii, bool> vis;
-	cout << "? ";
-	printYZ({1, 1}, P1);
-	printQ(P1, P2);
-	printYZ(P2, {n, m});
-	printYZmap({1, 1}, P1, vis);
-	printQmap(P1, P2, vis);
-	printYZmap(P2, {n, m}, vis);
-	cout << endl;
-
-	int x1 = P1.first, y1 = P1.second;
-	int x2 = P2.first, y2 = P2.second;
-	int mid = (y2 + y1 + 1) / 2;
-
-	int num;
-	cin >> num;
-	for (int i = 1; i <= num; ++i)
-	{
-		int x, y;
-		cin >> y >> x;
-		qipan[x][y] = 1;
-	}
-
-	pii p1 = {0, 0};
-	pii p2 = {0, 0};
-	int x = x1, y = y1;
-	int flag = 0;
-	for (y; y <= mid; ++y)
-	{
-		if (qipan[x][y] == 0)
-			flag = 1;
-		if (qipan[x][y] && flag == 0)
-			p1 = {x, y};
-		if (qipan[x][y] && flag == 1)
-		{
-			p2 = {x, y};
-			if (p2.second - p1.second == 1)
-			{
-				for (int i = p1.first + 1; i <= p2.first; ++i)
-				{
-					if (vis[{i, p1.second}])
-						qipan[i][p1.second + 1] = 1;
-					else
-						qipan[i][p1.second] = 1;
-				}
-			}
-			else
-				qurry(p1, p2);
-			p1 = {0, 0};
-			p2 = {0, 0};
-			flag = 0;
-		}
-	}
-	--y, ++x;
-	for (x; x <= x2; ++x)
-	{
-		if (qipan[x][y] == 0)
-			flag = 1;
-		if (qipan[x][y] && flag == 0)
-			p1 = {x, y};
-		if (qipan[x][y] && flag == 1)
-		{
-			p2 = {x, y};
-			if (p2.second - p1.second == 1)
-			{
-				for (int i = p1.first + 1; i <= p2.first; ++i)
-				{
-					if (vis[{i, p1.second}])
-						qipan[i][p1.second + 1] = 1;
-					else
-						qipan[i][p1.second] = 1;
-				}
-			}
-			else
-				qurry(p1, p2);
-			p1 = {0, 0};
-			p2 = {0, 0};
-			flag = 0;
-		}
-	}
-	--x, ++y;
-	for (y; y <= y2; ++y)
-	{
-		if (qipan[x][y] == 0)
-			flag = 1;
-		if (qipan[x][y] && flag == 0)
-			p1 = {x, y};
-		if (qipan[x][y] && flag == 1)
-		{
-			p2 = {x, y};
-			if (p2.second - p1.second == 1)
-			{
-				for (int i = p1.first + 1; i <= p2.first; ++i)
-				{
-					if (vis[{i, p1.second}])
-						qipan[i][p1.second + 1] = 1;
-					else
-						qipan[i][p1.second] = 1;
-				}
-			}
-			else
-				qurry(p1, p2);
-			p1 = {0, 0};
-			p2 = {0, 0};
-			flag = 0;
-		}
-	}
-}
-
-void print()
-{
-	cout << "! ";
-	printYZ({1, 1}, {n, m});
-	cout << endl;
-}
-
-signed main()
-{
-	ios::sync_with_stdio(false);
-	cin >> m >> n;
-	qipan[1][1] = qipan[n][m] = 1;
-	qurry({1, 1}, {n, m});
-	print();
-	return 0;
+public:
+    address(int start=20010){element=new person[start];length=0;}
+    void add(string a,string b,int c,int d){
+        element[length].setname(a);
+        element[length].setphone(b);
+        element[length].setclassroom(c);
+        element[length].setroom(d);
+        length++;
+    }
+    void alter1(string a,int n){element[n].setphone(a);}
+    void alter2(int a,int n){element[n].setclassroom(a);}
+    void alter3(int a,int n){element[n].setroom(a);}
+    int seek(string a){
+        int n=0;
+        while(n<length){
+            if(element[n].getname()==a){
+                return n;
+            }
+            n++;
+        }
+        return -1;
+    }
+    void cc(int n){
+        for(int i=n;i<length-1;i++){
+            element[i].fuzhi(element[i+1]);
+        }
+        length--;
+    }
+    int all(int aim){
+        int sum=0;
+        for(int i=0;i<length;i++){
+            if(element[i].getclassroom()==aim){
+                sum=sum^element[i].getroom();
+            }
+        }
+        return sum;}
+};
+int main(){
+    address book;
+    int n;
+    cin>>n;
+    int site;
+    string nname,nphone;
+    int nclassroom,nroom,judge,subject;
+    for(int i=0;i<n;i++){
+        cin>>judge;
+        if(judge==0){
+            cin>>nname>>nphone>>nclassroom>>nroom;
+            book.add(nname,nphone,nclassroom,nroom);
+        }
+        if(judge==1){
+            cin>>nname;
+            site=book.seek(nname);
+            book.cc(site);
+        }
+        if(judge==2){
+            cin>>nname;
+            site=book.seek(nname);
+            cin>>subject;
+            if(subject==1){
+                cin>>nphone;
+                book.alter1(nphone,site);
+            }
+            if(subject==2){
+                cin>>nclassroom;
+                book.alter2(nclassroom,site);
+            }
+            if(subject==3){
+                cin>>nroom;
+                book.alter3
+                        (nroom,site);
+            }
+        }
+        if(judge==3){
+            cin>>nname;
+            site=book.seek(nname);
+            if(site==-1){
+                cout<<"0"<<endl;
+            }else cout<<"1"<<endl;
+        }
+        if(judge==4){
+            cin>>nclassroom;
+            cout<<book.all(nclassroom)<<endl;
+        }
+    }
+    return 0;
 }
